@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kostis Spyroglou</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one narrow left-aligned text column; each section is a label on the left and plain rows on the right at desktop width, stacked on phones. */
+:root {
+  --bg: #fcfcfb;
+  --fg: #1b1d1e;
+  --muted: #6a7072;
+  --rule: #dcdfdf;
+  --link: #1d6a72;
+  --todo-bg: #f3efe2;
+  --todo-fg: #6b5d1f;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141616;
+    --fg: #e4e7e7;
+    --muted: #9aa1a3;
+    --rule: #2c3032;
+    --link: #6fc0c8;
+    --todo-bg: #2a2716;
+    --todo-fg: #d8c97a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141616;
+  --fg: #e4e7e7;
+  --muted: #9aa1a3;
+  --rule: #2c3032;
+  --link: #6fc0c8;
+  --todo-bg: #2a2716;
+  --todo-fg: #d8c97a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-block: 48px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 760px; margin: 0 auto; }
+a { color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+h1 { font-size: 2rem; line-height: 1.2; font-weight: 600; margin: 0 0 4px; text-wrap: balance; }
+.role { color: var(--muted); margin: 0 0 20px; }
+.intro { max-width: 60ch; margin: 0 0 20px; }
+.links { display: flex; flex-wrap: wrap; gap: 6px 20px; padding: 0; margin: 0; list-style: none; }
+section {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 8px 32px;
+  border-top: 1px solid var(--rule);
+  margin-top: 40px;
+  padding-top: 20px;
+}
+h2 {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.rows { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.row { min-width: 0; }
+.row h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+.row p { margin: 2px 0 0; max-width: 62ch; }
+.meta { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+.row .meta { display: block; margin-top: 2px; }
+.cv .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 16px; }
+.cv .row p { grid-column: 1; margin: 0; color: var(--muted); }
+.cv h3 { font-weight: 500; }
+.cv .when { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); text-align: right; padding-top: 3px; }
+.sub { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 8px 0 -8px; }
+.todo { display: inline-block; background: var(--todo-bg); color: var(--todo-fg); font-size: 0.85rem; padding: 2px 8px; border-radius: 3px; margin-top: 4px; }
+.email { user-select: all; }
+@media (max-width: 640px) {
+  body { padding-block: 32px 56px; }
+  section { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  h1 { font-size: 1.7rem; }
+}
+.nav { display: flex; gap: 20px; margin: 0 0 40px; padding: 0; list-style: none; font-size: 0.95rem; }
+.nav a[aria-current="page"] { color: var(--fg); text-decoration: none; font-weight: 500; }
+.cvbar { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 20px; }
+.pdf { width: 100%; height: 1000px; border: 1px solid var(--rule); background: var(--bg); }
+@media (max-width: 640px) { .pdf { height: 560px; } }
+.hero { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px 36px; align-items: start; }
+.photo { width: 200px; aspect-ratio: 1 / 1; background: var(--rule); border-radius: 2px; }
+img.photo { display: block; object-fit: cover; }
+.hero .role { color: var(--fg); font-size: 1.1rem; max-width: 40ch; margin: 0 0 8px; }
+.hero .meta { margin: 0 0 14px; }
+@media (max-width: 640px) { .hero { grid-template-columns: minmax(0, 1fr); } .photo { width: 160px; } }
+
+.nav { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 0 0 40px; padding: 0 0 12px; border-bottom: 1px solid var(--rule); list-style: none; font-size: 0.95rem; }
+.nav a { color: var(--muted); text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+.nav a:hover { color: var(--fg); }
+.nav a[aria-current="page"] { color: var(--fg); border-bottom-color: var(--link); }
+.cvbar { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 1.05rem; }
+.bigemail { font-size: 1.2rem; }
+.block-title { font-size: 1.4rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--fg); margin: 48px 0 0; }
+
+.carousel { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: thin; }
+.carousel:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.slide { flex: 0 0 min(80%, 480px); scroll-snap-align: start; aspect-ratio: 4 / 3; margin: 0; background: var(--rule); display: grid; place-items: center; color: var(--muted); font-size: 0.85rem; }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slide figcaption { font-family: var(--mono); font-size: 0.8rem; }
+.links a{display:inline-flex;align-items:center;gap:8px}.ico{flex:none}.dl{display:inline-flex;align-items:center;gap:8px;margin:0 0 18px;font-weight:500}
+</style>
+
+</head>
+<body>
+<main>
+  <ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="work.html">Work</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <header class="hero">
+    <img class="photo" src="photo.jpg" alt="Kostis Spyroglou" width="200" height="200">
+    <div>
+      <h1>Kostis Spyroglou</h1>
+      <p class="role">I'd like to call myself a creative technologist, but I am probably just a trepid cacologist.</p>
+      <p class="meta">MSc Entertainment Communication, University of Amsterdam</p>
+      <p class="intro">My interest is creative media. My professional work spans games production and QA, research and communication.</p>
+      <p class="dl-wrap"><a class="dl" href="cv.pdf" download="CV_Kostis_Spyroglou.pdf"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg><span>Download CV (PDF)</span></a></p>
+      <ul class="links"><li><a href="https://github.com/stoogieking"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a></li><li><a href="https://substack.com/@kostisspyroglou"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg><span>Substack</span></a></li><li><a href="https://www.linkedin.com/in/kostis-spyroglou-1b815a2a5/"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a></li></ul>
+    </div>
+  </header>
+</main>
+</body>
+</html>
