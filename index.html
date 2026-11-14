@@ -156,6 +156,33 @@ details.more[open] summary { margin-bottom: 12px; }
 .player.thumb .play::after { border-left-width: 11px; border-top-width: 7px; border-bottom-width: 7px; margin-left: 3px; }
 .player.thumb .ig { padding-bottom: 11px; }
 .player.thumb .ig { color: #d8d8dc; }
+.feature + .feature { margin-top: 16px; }
+.labpanel { aspect-ratio: 16 / 9; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; background: radial-gradient(120% 90% at 50% 100%, #2a1f4a 0%, #050506 60%); border: 1px solid var(--rule); border-radius: 3px; text-decoration: none; }
+.lb1 { font-size: 3rem; font-weight: 600; letter-spacing: -0.03em; color: var(--fg); line-height: 1; }
+.lb2 { font-size: 1rem; color: var(--muted); letter-spacing: 0.02em; }
+.mz2 { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--link); margin-top: 6px; }
+/* creative: book | films | book, breaking out of the text column */
+section.wide { width: min(1280px, calc(100vw - 32px)); margin-left: 50%; transform: translateX(-50%); grid-template-columns: 200px minmax(0, 820px) 200px; justify-content: center; gap: 0 40px; align-items: start; }
+section.wide .cl h2 { margin-bottom: 64px; }
+section.wide .cr { padding-top: 88px; }
+section.wide .book { max-width: 200px; }
+@media (max-width: 1240px) {
+  section.wide { width: auto; margin-left: 0; transform: none; grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr); gap: 24px 32px; }
+  section.wide .cl { display: contents; }
+  section.wide .cl h2 { grid-column: 1; grid-row: 1; margin: 4px 0 0; }
+  section.wide .films { grid-column: 2 / 4; grid-row: 1; }
+  section.wide .cl .book { grid-column: 2; grid-row: 2; }
+  section.wide .cr { grid-column: 3; grid-row: 2; padding-top: 0; }
+}
+@media (max-width: 640px) {
+  section.wide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+  section.wide .cl h2 { grid-column: 1 / 3; }
+  section.wide .films { grid-column: 1 / 3; grid-row: 2; }
+  section.wide .cl .book { grid-column: 1; grid-row: 3; }
+  section.wide .cr { grid-column: 2; grid-row: 3; }
+}
+.labpanel { padding: 0; overflow: hidden; }
+.thumbsvg { width: 100%; height: 100%; display: block; }
 </style></head>
 <body><main>
 <ul class="nav"><li><a href="#home" data-p="home">Home</a></li><li><a href="#work" data-p="work">Work</a></li><li><a href="#contact" data-p="contact">Contact</a></li></ul>
@@ -182,6 +209,60 @@ details.more[open] summary { margin-bottom: 12px; }
       <h3><a target="_blank" rel="noopener" href="lokalia-case-study.pdf">lokalia_ A/B</a></h3>
       <p>Redesigned the website of a food and wine host in Thessaloniki, using communication science to cut the first screen from 74 words to 18.</p>
       <p class="meta"><a target="_blank" rel="noopener" href="lokalia-case-study.pdf">View PDF</a> &nbsp;·&nbsp; <a target="_blank" rel="noopener" href="lokalia-case-study.pdf" download>Download PDF</a></p>
+    </div>
+  </div>
+  <div class="feature" id="thesis">
+    <a href="#contact" class="labpanel"><svg class="thumbsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="A game controller whose cable plugs into a brain">
+  <defs>
+    <radialGradient id="glow" cx="70%" cy="52%" r="60%">
+      <stop offset="0" stop-color="#2a1f4a"/>
+      <stop offset="1" stop-color="#050506"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#glow)"/>
+
+  <g fill="none" stroke="#ececee" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- brain (side view, facing left) -->
+    <path d="M486 236 C492 260 496 280 504 298 L522 293 C515 276 511 258 512 238 Z" fill="#1d1630"/>
+    <path d="M498 232 C502 254 528 264 548 254 C562 246 562 230 552 224 Z" fill="#4a3a7a" stroke="#ececee" stroke-width="3.5"/>
+    <path d="M372 214 C352 198 356 168 376 160 C368 132 392 110 418 116 C426 92 458 84 478 96 C496 80 528 86 536 106 C560 106 574 128 566 148 C584 160 584 190 564 200 C568 222 548 238 528 232 C512 246 488 248 474 238 C458 250 430 248 418 236 C398 242 376 232 372 214 Z" fill="#251c3f"/>
+    <path d="M390 172 C402 162 418 166 422 178"/>
+    <path d="M404 138 C420 134 432 144 430 156"/>
+    <path d="M444 112 C448 128 466 132 476 124"/>
+    <path d="M500 110 C496 126 508 136 522 132"/>
+    <path d="M542 132 C536 146 544 160 556 160"/>
+    <path d="M442 162 C458 152 476 158 480 170 C484 182 500 186 514 178"/>
+    <path d="M412 206 C438 194 470 198 494 212"/>
+    <path d="M516 200 C528 194 540 198 546 210"/>
+    <path d="M450 224 C460 218 472 220 476 228"/>
+    
+    <!-- controller -->
+    <path d="M140 226 H244 C278 226 302 252 302 282 C302 312 278 332 250 332 C232 332 222 324 212 310 H172 C162 324 152 332 134 332 C106 332 82 312 82 282 C82 252 106 226 140 226 Z"/>
+    <rect x="176" y="208" width="32" height="18" rx="3"/>
+    <path d="M116 271 H128 V259 H140 V271 H152 V283 H140 V295 H128 V283 H116 Z"/>
+    <rect x="180" y="272" width="24" height="10" rx="3"/>
+    <circle cx="250" cy="261" r="7"/><circle cx="266" cy="277" r="7"/><circle cx="234" cy="277" r="7"/><circle cx="250" cy="293" r="7"/>
+  </g>
+
+  <!-- cable: controller to brain -->
+  <g fill="none" stroke="#b49cff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M192 208 V170 C192 146 210 132 236 132 H290 C322 132 336 152 340 172 C343 186 350 194 360 197"/>
+  </g>
+  
+
+  <text x="40" y="44" fill="#b49cff" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" letter-spacing="2.2">NOW RECRUITING · AMSTERDAM</text>
+</svg>
+
+
+
+
+
+</a>
+    <div>
+      <span class="tag">Lab research · Master’s thesis · 2026</span>
+      <h3><a href="#contact">Gender Identification in GTA VI</a></h3>
+      <p>Grand Theft Auto VI is set to be one of the biggest entertainment launches of all time, and millions of players will soon roam its open world freely. Does playing as Lucia or Jason shape how you play? In this lab study, every player takes on both protagonists, with complete freedom over what they do.</p>
+      <p class="meta"><a href="#contact">Contact me to take part →</a></p>
     </div>
   </div>
 
@@ -214,30 +295,25 @@ details.more[open] summary { margin-bottom: 12px; }
     </div>
   </section>
   
-  <section id="creative">
-    <h2>Creative</h2>
-    <div class="rows">
-      <div class="rows films">
+  <section id="creative" class="wide">
+    <div class="cl"><h2>Creative</h2><a class="book" href="pork.pdf" download="pork.pdf" target="_blank" rel="noopener">
+        <img src="cover-pork.jpg" alt="Cover of pork">
+        <strong>pork</strong><span>Meanderings targeted towards the self.</span><em>Download PDF ↓</em>
+      </a></div>
+    <div class="rows films">
       <div class="film">
         <a class="player thumb" style="background-image:url(film-stay-sober.jpg)" href="https://www.instagram.com/p/C6E6rzysdlw/" target="_blank" rel="noopener" aria-label="Play on Instagram"><span class="play" aria-hidden="true"></span><span class="ig">Play on Instagram</span></a>
         <div><span class="tag">Short film</span><h3>#stay_sober</h3><p>A narrated poem: my own writing on the struggles of Gen Z, voiced by a well-known Greek voice actor.</p></div>
       </div>
-      <div class="film">
+<div class="film">
         <a class="player thumb" style="background-image:url(film-gkore.jpg)" href="https://www.instagram.com/p/DYSU4TRMwTp/" target="_blank" rel="noopener" aria-label="Play on Instagram"><span class="play" aria-hidden="true"></span><span class="ig">Play on Instagram</span></a>
         <div><span class="tag">Short film</span><h3>gkore</h3><p>A short proof-of-concept inspired by Love, Death &amp; Robots.</p></div>
       </div>
-      </div>
-      <div class="books">
-      <a class="book" href="pork.pdf" download="pork.pdf" target="_blank" rel="noopener">
-        <img src="cover-pork.jpg" alt="Cover of pork">
-        <strong>pork</strong><span>Meanderings targeted towards the self.</span><em>Download PDF ↓</em>
-      </a>
-      <a class="book" href="sun-of-nobody.pdf" download="sun-of-nobody.pdf" target="_blank" rel="noopener">
+    </div>
+    <div class="cr"><a class="book" href="sun-of-nobody.pdf" download="sun-of-nobody.pdf" target="_blank" rel="noopener">
         <img src="cover-sun-of-nobody.jpg" alt="Cover of sun of nobody">
         <strong>sun of nobody</strong><span>Inspired by the long climb towards maturity.</span><em>Download PDF ↓</em>
-      </a>
-      </div>
-    </div>
+      </a></div>
   </section>
 </div>
 <div class="page" id="p-contact"><header><h1>Contact</h1></header><section id="contact-box" class="compact">
