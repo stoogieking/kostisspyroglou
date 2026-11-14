@@ -212,7 +212,7 @@ section.wide .book { max-width: 200px; }
     </div>
   </div>
   <div class="feature" id="thesis">
-    <a href="#contact" class="labpanel"><svg class="thumbsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="A game controller whose cable plugs into a brain">
+    <a href="#contact" class="labpanel"><svg class="thumbsvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="A game controller whose cable plugs into the cerebellum">
   <defs>
     <radialGradient id="glow" cx="70%" cy="52%" r="60%">
       <stop offset="0" stop-color="#2a1f4a"/>
@@ -222,7 +222,8 @@ section.wide .book { max-width: 200px; }
   <rect width="640" height="360" fill="url(#glow)"/>
 
   <g fill="none" stroke="#ececee" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- brain (side view, facing left) -->
+    <!-- brain, mirrored so the stem faces the controller -->
+    <g transform="translate(936 0) scale(-1 1)">
     <path d="M486 236 C492 260 496 280 504 298 L522 293 C515 276 511 258 512 238 Z" fill="#1d1630"/>
     <path d="M498 232 C502 254 528 264 548 254 C562 246 562 230 552 224 Z" fill="#4a3a7a" stroke="#ececee" stroke-width="3.5"/>
     <path d="M372 214 C352 198 356 168 376 160 C368 132 392 110 418 116 C426 92 458 84 478 96 C496 80 528 86 536 106 C560 106 574 128 566 148 C584 160 584 190 564 200 C568 222 548 238 528 232 C512 246 488 248 474 238 C458 250 430 248 418 236 C398 242 376 232 372 214 Z" fill="#251c3f"/>
@@ -235,7 +236,8 @@ section.wide .book { max-width: 200px; }
     <path d="M412 206 C438 194 470 198 494 212"/>
     <path d="M516 200 C528 194 540 198 546 210"/>
     <path d="M450 224 C460 218 472 220 476 228"/>
-    
+    </g>
+
     <!-- controller -->
     <path d="M140 226 H244 C278 226 302 252 302 282 C302 312 278 332 250 332 C232 332 222 324 212 310 H172 C162 324 152 332 134 332 C106 332 82 312 82 282 C82 252 106 226 140 226 Z"/>
     <rect x="176" y="208" width="32" height="18" rx="3"/>
@@ -246,12 +248,13 @@ section.wide .book { max-width: 200px; }
 
   <!-- cable: controller to brain -->
   <g fill="none" stroke="#b49cff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M192 208 V170 C192 146 210 132 236 132 H290 C322 132 336 152 340 172 C343 186 350 194 360 197"/>
+    <path d="M192 208 V184 C192 158 210 146 236 146 H282 C314 146 332 168 334 196 C336 224 352 242 377 242"/>
   </g>
   
 
   <text x="40" y="44" fill="#b49cff" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" letter-spacing="2.2">NOW RECRUITING · AMSTERDAM</text>
 </svg>
+
 
 
 
